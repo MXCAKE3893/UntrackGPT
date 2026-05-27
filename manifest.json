@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "UntrackGPT",
+  "version": "1.0",
+  "description": "ChatGPTの引用リンクから不要なトラッキングパラメータ（utm_sourceなど）を削除します。",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
